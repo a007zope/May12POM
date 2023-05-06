@@ -1,0 +1,14 @@
+package Chap18AbstractClass;
+
+public class santro extends Car {
+
+	public santro(int r) {
+		super(3);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+
+}

@@ -1,0 +1,13 @@
+package Chap18AbstractClass;
+
+public class Different {
+	
+	
+public static void main(String[] args) {
+	
+	Class1 c1 = new Class1();
+	
+	
+}
+
+}

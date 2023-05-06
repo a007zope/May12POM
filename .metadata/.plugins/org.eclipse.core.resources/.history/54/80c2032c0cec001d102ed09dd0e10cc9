@@ -1,0 +1,32 @@
+package Chap18AbstractClass;
+
+public class santro extends Car {
+
+	public santro(int r) {
+		super(3);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	void braking() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void carType() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void speedLimit(int sl) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+
+}

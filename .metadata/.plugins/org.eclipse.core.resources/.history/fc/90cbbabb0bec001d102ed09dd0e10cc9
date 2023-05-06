@@ -1,0 +1,21 @@
+package Chap18AbstractClass;
+
+public abstract class Car {
+	
+	int wheels ;
+	
+	public Car(int r )
+	{
+		wheels =r;
+	}
+	
+	abstract void braking();
+	
+	abstract void carType();
+	
+	
+	
+
+	
+
+}

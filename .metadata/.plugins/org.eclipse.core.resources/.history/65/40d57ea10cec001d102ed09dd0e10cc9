@@ -1,0 +1,14 @@
+package Chap18AbstractClass;
+
+public abstract class Maruti extends Car {
+
+	public Maruti(int r) {
+		super(r);
+
+	}
+	
+	
+	
+	
+
+}

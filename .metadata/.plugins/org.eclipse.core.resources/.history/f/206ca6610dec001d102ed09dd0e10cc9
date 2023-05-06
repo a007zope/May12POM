@@ -1,0 +1,25 @@
+package Chap18AbstractClass;
+
+public class TestCar {
+	
+	public static void main(String[] args) {
+		
+		santro s = new santro(45676);
+		System.out.println(s.regNo);
+		s.braking();
+		s.carType();
+		
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+		
+		
+		Maruti m = new Maruti(45677);
+		System.out.println(m.regNo);
+		m.braking();
+		m.carType();
+		m.registrationNum(45687);
+		
+		
+		
+	}
+
+}

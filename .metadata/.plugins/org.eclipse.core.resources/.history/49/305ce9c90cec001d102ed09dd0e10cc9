@@ -1,0 +1,20 @@
+package Chap18AbstractClass;
+
+public class Maruti extends Car {
+
+	public Maruti(int r) {
+		super(r);
+
+	}
+	
+	void registrationNum(int r)
+	{
+		System.out.println("registration number is"+r);
+
+	}
+	
+	
+	
+	
+
+}

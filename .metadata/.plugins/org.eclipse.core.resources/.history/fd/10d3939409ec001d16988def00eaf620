@@ -1,0 +1,25 @@
+package Chap18AbstractClass;
+
+public class Different {
+	
+	
+public static void main(String[] args) {
+	
+	Myclass ref;
+// we can provide a reference to abstract class even if won't create an object of it
+	
+	Class1 c1 = new Class1();
+	ref = c1;
+	ref.calculate(2);
+	
+	Class2 c2 = new Class2();
+	
+	c2.calculate(4);
+	
+	Class3 c3 = new Class3();
+	c3.calculate(2);
+	
+	
+}
+
+}

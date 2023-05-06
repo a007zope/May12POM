@@ -1,0 +1,14 @@
+package Chap18AbstractClass;
+
+public class Car {
+	
+	int regno ;
+	
+	public Car(int r )
+	{
+		regno =r;
+	}
+	
+	void 
+
+}

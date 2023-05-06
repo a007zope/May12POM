@@ -1,0 +1,23 @@
+package Chap21Exceptions;
+
+public class UsingThrowsClauseNullPointer {
+	
+	static void demo()
+	{
+		
+		try
+		{
+			System.out.println("Inside demo()");
+			
+			throw new NullPointerException("Exception data");
+		}
+		
+		catch(NullPointerException ne)
+		{
+			System.out.println(ne);
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package Chap21Exceptions;
+
+public class MyException {
+/**
+ * Write a program to throw user defined exception
+ */
+	
+	
+}

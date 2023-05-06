@@ -1,0 +1,11 @@
+package Chap21Exceptions;
+
+public class UsingThrowsMain {
+	
+	
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package Chap21Exceptions;
+
+public class RethrowExceptionB {
+
+	public static void main(String[] args) {
+
+		RethrowExceptionA a = new RethrowExceptionA();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

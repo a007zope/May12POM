@@ -1,0 +1,5 @@
+package Chap21Exceptions;
+
+public class UsingThrowsClauseNullPointerMain {
+
+}

@@ -1,0 +1,22 @@
+package Chap21Exceptions;
+
+public class MyException extends Exception {
+	
+/**
+ * Write a program to throw user defined exception
+ */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

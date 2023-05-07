@@ -1,0 +1,17 @@
+package Chap18AbstractClass;
+
+public class TestElectricityBill {
+	
+	public static void main(String[] args) {
+		
+		Plan p;
+		
+		DomesticPlan dp = new DomesticPlan();
+		CommercialPlan cp = new CommercialPlan();
+		
+		p=dp;
+		p.calculateBill(45);
+		
+	}
+
+}

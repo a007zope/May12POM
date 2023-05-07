@@ -1,0 +1,11 @@
+package Chap18AbstractClass;
+
+public class DomesticPlan extends Plan {
+	
+	
+	public void getRate()
+	{
+		double rate =2.5;
+	}
+
+}

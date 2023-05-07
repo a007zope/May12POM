@@ -1,0 +1,17 @@
+package Chap18AbstractClass;
+
+public abstract class Plan {
+	
+	
+/**
+ * WAP to write an abstract class with an instance variable rate, a concrete method getRate()
+ * and an abstract method calculateBill()
+ */
+	
+	protected double rate;
+	
+	
+	
+	
+
+}

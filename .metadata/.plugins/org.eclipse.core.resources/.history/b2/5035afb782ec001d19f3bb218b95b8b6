@@ -1,0 +1,11 @@
+package Chap18AbstractClass;
+
+public class TestElectricityBill {
+	
+	public static void main(String[] args) {
+		
+		Plan p;
+		
+	}
+
+}

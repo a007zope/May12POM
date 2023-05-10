@@ -5,7 +5,6 @@ public class SecondLargestintegerArray {
 
 	public static void main(String[] args) {
 
-
 		/**
 		 * First sort the array and then compare it with the largest element which will 
 		 * be present in the last of the array

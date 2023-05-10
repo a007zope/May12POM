@@ -19,6 +19,10 @@ public class DriverFactory {
 	public Properties prop;
 	public OptionsManager optionsManager;
 
+	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
+
+
+
 	/**
 	 * this method is use to intialize a webdriver
 	 *
@@ -38,40 +42,112 @@ public class DriverFactory {
 			WebDriverManager.chromedriver().setup();
 			/* ChromeOptions co = new ChromeOptions();
             co.addArguments("--remote-allow-origins=*");*/
-			driver = new ChromeDriver(optionsManager.getChromeOptions());
+			//driver = new ChromeDriver(optionsManager.getChromeOptions());
+
+			tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
+
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			//tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
+
 		} else if (browserName.equalsIgnoreCase("safari")) {
 			driver = new SafariDriver();
 		} else {
 			System.out.println(" Please pass the right browser" + browserName);
 		}
-		//driver.manage().window().fullscreen();
-		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("url"));
-		return driver;
+		getDriver().manage().window().fullscreen();
+		getDriver().manage().deleteAllCookies();
+		getDriver().get(prop.getProperty("url"));
 
+
+		return getDriver();
+
+	}
+
+
+	/**
+	 * getdriver(): It will return a thread local copy of the webdriver
+	 */
+	public static synchronized WebDriver getDriver() {
+		return tlDriver.get();
 	}
 
 	/**
 	 * This method is use to initialize the Properties
 	 * @return will return properties prop reference
 	 */
+	
+	
+	/*
+    ./ means from  current project directory you traverse
+       new FileInputStream("./src/test/resources/config/config.properties");
+	 */
 	public Properties init_prop() {
 		prop = new Properties();
-		/*
-        ./ means from  current project directory you traverse
-		 */
-		try {
-			FileInputStream fis = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(fis);
-		} 
+
+		FileInputStream fis = null;
 		
-		catch (FileNotFoundException e) {
+		
+		String envName = System.getProperty("env"); //qa/dev/stage/uat
+		
+		
+		if(envName == null)
+		{
+			System.out.println("running on prod envName");
+			try 
+			{
+				
+			fis = new FileInputStream("./src/test/resources/config/config.properties");
+		
+		}
+			catch(FileNotFoundException e)
+			{
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		
+		else
+		{
+			System.out.println("running on envName"+ envName);
+			try {
+			switch(envName.toLowerCase())
+			{
+			
+			case "qa":
+				fis = new FileInputStream("./src/test/resources/config/qa.config.properties");
+				break;
+				
+			case "stage":
+			fis = new FileInputStream("./src/test/resources/config/stage.config.properties");
+			break;
+			
+			default:
+				System.out.println("Please pass the right environment");
+				break;
+				
+		}
+			}
+			
+			catch(FileNotFoundException e )
+			{
+				e.printStackTrace();
+			}
+			
+		
+		}
+		
+		try
+		{
+			prop.load(fis);
+		}
+		catch(IOException e)
+		{
+			
 			e.printStackTrace();
-		} catch (IOException i) {
-			i.printStackTrace();
 		}
 		
 		

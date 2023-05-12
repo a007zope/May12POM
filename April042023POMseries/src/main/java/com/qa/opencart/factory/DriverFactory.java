@@ -1,12 +1,18 @@
 package com.qa.opencart.factory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.opentelemetry.exporter.logging.SystemOutLogExporter;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,8 +26,6 @@ public class DriverFactory {
 	public OptionsManager optionsManager;
 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
-
-
 
 	/**
 	 * this method is use to intialize a webdriver
@@ -106,10 +110,7 @@ public class DriverFactory {
 				e.printStackTrace();
 			}
 			
-		}
-		
-		
-		
+		}	
 		else
 		{
 			System.out.println("running on envName"+ envName);
@@ -149,9 +150,55 @@ public class DriverFactory {
 			
 			e.printStackTrace();
 		}
-		
-		
+				
 		return prop;
 
 	}
+	
+	/**
+	 * the below method takes the screenshot
+	 * 
+	 * user.dir means current project directory in our case it will April042023POMSeries
+	 */
+	
+	public static String getScreenshot()
+	{
+		File srcFile =((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
+		
+		String path = System.getProperty("user.dir") + "/screenshots/"+System.currentTimeMillis()+".png";
+		
+		File destination = new File(path);
+		
+		try {
+			FileUtils.copyFile(srcFile, destination);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return path;
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

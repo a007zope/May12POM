@@ -26,7 +26,7 @@ public class Constants {
       expSecList.add("My Account");
       expSecList.add("My Orders");
       expSecList.add("My Affiliate Account");
-      expSecList.add("Newsletter");
+      expSecList.add("Newsletter");	
       return expSecList;
     }
 

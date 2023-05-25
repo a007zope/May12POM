@@ -4,6 +4,8 @@
 	
 	<listeners>
 		<listener
+			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
+		<listener
 			class-name="com.qa.opencart.listeners.ExtentReportListener" />
 			<listener
 			class-name="com.qa.opencart.listeners.TestAllureListener"/>
@@ -15,13 +17,13 @@
     </classes>    	  
 	  </test>
 	  
-	
+	<!--
 	    <test name="Open Cart Accounts Page Test">	  	  	  
     <classes>
       <class name="com.qa.opencart.tests.AccountsPageTest"/>
     </classes>    	  
 	  </test>  
-	  
+	  -->
 	 <!--    <test name="Open Cart Registration Page Test">	  	  	  
     <classes>
       <class name="com.qa.opencart.tests.RegistrationPageTest"/>

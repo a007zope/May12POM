@@ -2,6 +2,7 @@ package com.qa.opencart.tests;
 
 import com.qa.opencart.listeners.TestAllureListener;
 import com.qa.opencart.utils.Constants;
+import com.qa.opencart.utils.Errors;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -26,7 +27,7 @@ public class LoginPageTest extends BaseTest {
         Assert.assertEquals(actTitle, Constants.LOGIN_PAGE_TITLE);
     }
 
-	@Description("Login Page Title Test")
+	@Description("Login Page URL Test")
 	@Severity(SeverityLevel.NORMAL)
     @Test(priority = 2)
     public void loginPageUrlTest() {
@@ -44,7 +45,7 @@ public class LoginPageTest extends BaseTest {
 
     @Description("Register link Test")
 	@Severity(SeverityLevel.CRITICAL)
-    @Test(priority = 4)
+    @Test(priority = 4,enabled=true)
     public void isRegisterLinkExistTest() {
         Assert.assertTrue(loginPage.isRegisterLinkExist());
     }
@@ -54,7 +55,7 @@ public class LoginPageTest extends BaseTest {
     @Test(priority = 5)
     public void doLoginTest() {
         accountsPage = loginPage.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim());
-    Assert.assertEquals(accountsPage.getaccountPageTitle(),Constants.ACCOUNTS_PAGE_TITLE);
+    Assert.assertEquals(accountsPage.getaccountPageTitle(),Constants.ACCOUNTS_PAGE_TITLE,Errors.ELEMENT_NOT_FOUND_ERROR_MESSG);
     }
 
 
